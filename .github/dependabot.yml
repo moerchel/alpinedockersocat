@@ -1,0 +1,8 @@
+version: 2
+updates:
+  # The Dockerfile uses alpine:latest, the weekly rebuild picks up new
+  # Alpine releases, so only the actions are updated by Dependabot
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
