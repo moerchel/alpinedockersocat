@@ -35,7 +35,9 @@ Releases are created automatically:
 
 Old images are removed weekly from the registry: untagged images (old builds) and `sha-*` tags older than 30 days. Release images, _latest_ and _main_ are kept.
 
-Every image is scanned with [Trivy](https://github.com/aquasecurity/trivy) before it is published. Builds with fixable HIGH or CRITICAL vulnerabilities are not published, all findings are listed in the repository's [Security tab](https://github.com/moerchel/alpinedockersocat/security/code-scanning).
+Every image is scanned with [Trivy](https://github.com/aquasecurity/trivy) before it is published. Builds with fixable HIGH or CRITICAL vulnerabilities on any of the architectures are not published, all findings are listed in the repository's [Security tab](https://github.com/moerchel/alpinedockersocat/security/code-scanning).
+
+The image is built only once: it is pushed without a tag, tested and scanned, and only then gets its tags. So the published image is exactly the one that was tested.
 
 ## Build instructions
 
